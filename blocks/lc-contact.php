@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 					?>
 				<h4 class="h4">Find me on social media:</h4>
 				<div class="social-icons my-3">
-					<?= do_shortcode( '[social_icons class="fa-2x"]' ); ?>
+					<?= do_shortcode( '[social_icons class="d-flex justify-content-start gap-4 fa-2x"]' ); ?>
 				</div>
 					<?php
 				}
