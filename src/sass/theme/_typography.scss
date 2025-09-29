@@ -44,7 +44,7 @@ body {
 h1,
 .h1 {
   font-family: var(--ff-heading);
-  font-weight: var(--fw-heading);
+  // font-weight: var(--fw-heading);
   font-size: var(--fs-display);
   line-height: var(--lh-tight);
   letter-spacing: -0.01em;
@@ -54,7 +54,7 @@ h1,
 h2,
 .h2 {
   font-family: var(--ff-heading);
-  font-weight: var(--fw-heading);
+  // font-weight: var(--fw-heading);
   font-size: var(--fs-h2);
   line-height: var(--lh-tight);
   letter-spacing: -0.005em;
@@ -64,7 +64,7 @@ h2,
 h3,
 .h3 {
   font-family: var(--ff-heading);
-  font-weight: var(--fw-heading);
+  // font-weight: var(--fw-heading);
   font-size: var(--fs-h3);
   line-height: var(--lh-snug);
   text-wrap: balance;
@@ -73,7 +73,7 @@ h3,
 h4,
 .h4 {
   font-family: var(--ff-heading);
-  font-weight: var(--fw-heading);
+  // font-weight: var(--fw-heading);
   font-size: var(--fs-subtle);
   line-height: var(--lh-snug);
   text-wrap: balance;
