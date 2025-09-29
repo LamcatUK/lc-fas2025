@@ -1,0 +1,14 @@
+.awards-swiper {
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--col-white);
+    border-radius: var(--radius-base);
+
+    img {
+      max-height: 200px;
+      width: auto;
+    }
+  }
+}

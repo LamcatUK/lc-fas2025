@@ -1,0 +1,23 @@
+{
+  "key": "group_lc_studio_map",
+  "title": "LC Studio Map",
+  "fields": [
+    {
+      "key": "field_lc_studio_map_title",
+      "label": "LC Studio Map",
+      "name": "title",
+      "type": "message"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/lc-studio-map"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}

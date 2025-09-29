@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        { "slug": "white", "name": "White", "color": "hsl(0 0% 100%)" },
+        { "slug": "black", "name": "Black", "color": "hsl(0 0% 0%)" },
+        {
+          "slug": "neutral-50",
+          "name": "Neutral 50",
+          "color": "hsl(24 55% 96%)"
+        },
+        {
+          "slug": "secondary-100",
+          "name": "Secondary 100",
+          "color": "hsl(32 30% 85%)"
+        },
+        {
+          "slug": "secondary-400",
+          "name": "Secondary 400",
+          "color": "hsl(34 29% 67%)"
+        },
+        {
+          "slug": "secondary-900",
+          "name": "Secondary 900",
+          "color": "hsl(37 42% 53%)"
+        },
+        {
+          "slug": "accent-400",
+          "name": "Accent 400",
+          "color": "hsl(338 18% 38%)"
+        }
+      ],
+      "custom": false,
+      "defaultPalette": false
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "heading",
+          "name": "Heading (Montserrat)",
+          "fontFamily": "Montserrat, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, ui-sans-serif, system-ui, -apple-system, sans-serif"
+        },
+        {
+          "slug": "body",
+          "name": "Body (Montserrat)",
+          "fontFamily": "Montserrat, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, ui-sans-serif, system-ui, -apple-system, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "display", "name": "Display", "size": "48px" },
+        { "slug": "h2", "name": "H2", "size": "36px" },
+        { "slug": "h3", "name": "H3", "size": "24px" },
+        { "slug": "subtle", "name": "Subtle", "size": "22px" },
+        { "slug": "body", "name": "Body", "size": "18px" },
+        { "slug": "meta", "name": "Meta", "size": "17px" },
+        { "slug": "ui", "name": "UI", "size": "15px" }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--ff-body)",
+      "lineHeight": "var(--lh-normal)"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--ff-heading)",
+          "fontWeight": "500",
+          "lineHeight": "var(--lh-tight)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "key": "group_lc_awards",
+  "title": "LC Awards",
+  "fields": [
+    {
+      "key": "field_lc_awards_title",
+      "label": "LC Awards",
+      "name": "title",
+      "type": "message"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/lc-awards"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}

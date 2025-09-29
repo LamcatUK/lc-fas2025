@@ -1,0 +1,12 @@
+[data-animate="left"],
+[data-animate="right"],
+[data-animate-child="left"] {
+  opacity: 0;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 20px, 0); /* 20px instead of 50px */
+}
+[data-aos].aos-animate {
+  transform: translate3d(0, 0, 0);
+}

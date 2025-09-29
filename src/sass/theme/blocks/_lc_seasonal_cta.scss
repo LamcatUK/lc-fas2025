@@ -1,0 +1,15 @@
+.seasonal-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}

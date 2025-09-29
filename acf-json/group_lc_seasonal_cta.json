@@ -1,0 +1,64 @@
+{
+  "key": "group_lc_seasonal_cta",
+  "title": "LC Seasonal CTA",
+  "fields": [
+    {
+      "key": "field_lc_seasonal_cta_title",
+      "label": "LC Seasonal CTA",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": false,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "esc_html": 0,
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_lc_seasonal_cta_season",
+      "label": "Season",
+      "name": "season",
+      "type": "select",
+      "choices": [],
+      "instructions": "Select a season from Site-Wide Settings.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 1,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "Select a season"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf\/lc-seasonal-cta"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1758467416
+}

@@ -1,0 +1,97 @@
+$col-primary: #27383a;
+$col-dark: #222222;
+$col-darkest: #4a4a4a;
+$col-light: #f2f2f2;
+
+:root {
+  /* =========================
+     COLOURS (HSL + computed)
+     ========================= */
+
+  --col-white-hsl: 0 0% 100%; /* #FFFFFF – pure white */
+  --col-white: hsl(var(--col-white-hsl));
+
+  --col-black-hsl: 0 0% 0%; /* #000000 – pure black */
+  --col-black: hsl(var(--col-black-hsl));
+
+  /* Accent (button) */
+  --col-accent-400-hsl: 338 18% 38%; /* #704F57 – plum rose */
+  --col-accent-400: hsl(var(--col-accent-400-hsl));
+
+  --col-accent-400-hover-hsl: 338 18% 31%; /* darker by ~7% lightness */
+  --col-accent-400-hover: hsl(var(--col-accent-400-hover-hsl));
+
+  --col-accent-400-active-hsl: 338 18% 26%; /* darker by ~12% lightness */
+  --col-accent-400-active: hsl(var(--col-accent-400-active-hsl));
+
+  /* Supporting palette */
+  --col-secondary-900-hsl: 37 42% 53%; /* #BB9253 – ochre gold */
+  --col-secondary-900: hsl(var(--col-secondary-900-hsl));
+
+  --col-secondary-400-hsl: 34 29% 67%; /* #C6B192 – warm taupe */
+  --col-secondary-400: hsl(var(--col-secondary-400-hsl));
+
+  --col-secondary-100-hsl: 32 30% 85%; /* #E2D9CC – soft stone */
+  --col-secondary-100: hsl(var(--col-secondary-100-hsl));
+
+  /* Neutral background */
+  --col-neutral-50-hsl: 24 55% 96%; /* #FAF4F0 – off-white */
+  --col-neutral-50: hsl(var(--col-neutral-50-hsl));
+
+  /* =========================
+     TYPOGRAPHY (families/weights)
+     ========================= */
+  --ff-heading:
+    "Montserrat", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --ff-body:
+    "Montserrat", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --fw-heading: 600; /* Medium */
+  --fw-body: 300; /* Light */
+  --fw-meta: 300; /* Light */
+  --fw-ui: 600; /* Medium */
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+
+  /* =========================
+     TYPOGRAPHY (responsive sizes)
+     ========================= */
+  --fs-display: clamp(2.25rem, 1.2rem + 2.5vw, 3rem); /* 36→48px */
+  --fs-h2: clamp(1.75rem, 1.1rem + 1.5vw, 2.25rem); /* 28→36px */
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.8vw, 1.5rem); /* 20→24px */
+  --fs-subtle: clamp(1.125rem, 1.02rem + 0.5vw, 1.375rem); /* 18→22px */
+  --fs-body: clamp(1rem, 0.95rem + 0.4vw, 1.125rem); /* 16→18px */
+  --fs-meta: clamp(1rem, 0.98rem + 0.2vw, 1.0625rem); /* 16→17px */
+  --fs-ui: clamp(0.875rem, 0.82rem + 0.3vw, 0.9375rem); /* 14→15px */
+  --fs-tiny: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem); /* 12→13px */
+
+  /* =========================
+     RADIUS
+     ========================= */
+  --radius-base: 6px; /* Spec default for interactive & container elements */
+
+  /* =========================
+     SHADOWS
+     ========================= */
+
+  /* Close & tight – "active" */
+  --shadow-active: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.12);
+
+  /* Mid & airy – "non-interactive" */
+  --shadow-noninteractive:
+    0 4px 6px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Out & clear – "interactive" */
+  --shadow-interactive:
+    0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+
+  /* === Utilities === */
+  --transition: 250ms ease-out;
+
+  --h-top: 107px;
+  --h-top-desktop: 107px;
+}
