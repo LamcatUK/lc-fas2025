@@ -44,10 +44,17 @@ defined( 'ABSPATH' ) || exit;
 					<li><span class="fa-li"><i class="fas fa-phone"></i></span> <?= do_shortcode( '[contact_phone]' ); ?></li>
 					<li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span> <?= do_shortcode( '[contact_address]' ); ?></li>
 				</ul>
+				<?php
+				$social_media_group = get_field( 'social', 'option' );
+				if ( $social_media_group && is_array( $social_media_group ) && array_filter( $social_media_group ) ) {
+					?>
 				<div class="d-flex flex-wrap align-items-center social-icons gap-3">
 					<span>Connect:</span>
 					<?= do_shortcode( '[social_icons class="d-flex justify-content-center gap-3 fs-h3"]' ); ?>
 				</div>
+					<?php
+				}
+				?>
             </div>
         </div>
 
