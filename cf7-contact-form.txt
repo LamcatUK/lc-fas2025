@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label class="form-label"> Your name
+            [text* your-name class:form-control autocomplete:name] 
+        </label>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label class="form-label"> Your email
+            [email* your-email class:form-control autocomplete:email] 
+        </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label class="form-label"> Phone number (optional)
+            [tel your-phone class:form-control autocomplete:tel] 
+        </label>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label class="form-label"> Subject
+            [text* your-subject class:form-control] 
+        </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 mb-3">
+        <label class="form-label"> Your message (optional)
+            [textarea your-message class:form-control rows:5 cols:80] 
+        </label>
+    </div>
+</div>
+
+<div class="mb-3">
+    [submit class:btn class:btn-primary "Submit"]
+</div>
+
+

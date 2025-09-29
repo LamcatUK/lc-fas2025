@@ -224,11 +224,46 @@ add_filter('wp_nav_menu_items', 'add_custom_menu_item', 10, 2);
 
 
 add_filter(
-    'acf/load_field/key=field_lc_seasonal_cta_season',
+    'acf/load_field/name=season',
+    function ( $field ) {
+        // Only apply to the seasonal CTA season field.
+        if ( 'field_lc_seasonal_cta_season' !== $field['key'] ) {
+            return $field;
+        }
+
+        // Get the seasons repeater from options (Site-Wide Settings).
+        $seasons = get_field( 'seasons', 'option' );
+        $choices = array();
+
+        // Debug: Add a default option to see if the filter is working.
+        $choices[''] = 'Select a season...';
+
+        if ( $seasons && is_array( $seasons ) ) {
+            foreach ( $seasons as $row ) {
+                if ( ! empty( $row['season'] ) ) {
+                    $choices[ $row['season'] ] = $row['season'];
+                }
+            }
+        } else {
+            // Debug: Add message if no seasons found.
+            $choices['no_seasons'] = 'No seasons found in settings';
+        }
+
+        $field['choices'] = $choices;
+        return $field;
+    }
+);
+
+add_filter(
+    'acf/load_field/name=active_season',
     function ( $field ) {
         // Get the seasons repeater from options (Site-Wide Settings).
         $seasons = get_field( 'seasons', 'option' );
         $choices = array();
+
+        // Add empty option.
+        $choices[''] = 'Select active season...';
+
         if ( $seasons && is_array( $seasons ) ) {
             foreach ( $seasons as $row ) {
                 if ( ! empty( $row['season'] ) ) {
@@ -236,6 +271,7 @@ add_filter(
                 }
             }
         }
+
         $field['choices'] = $choices;
         return $field;
     }

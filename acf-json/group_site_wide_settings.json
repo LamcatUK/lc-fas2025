@@ -363,6 +363,32 @@
             "selected": 0
         },
         {
+            "key": "field_68daca2cedae2",
+            "label": "Active Season",
+            "name": "active_season",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
             "key": "field_68d013028b8b6",
             "label": "Seasons",
             "name": "seasons",
@@ -739,5 +765,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758657960
+    "modified": 1759169172
 }

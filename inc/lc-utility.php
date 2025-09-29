@@ -694,90 +694,72 @@ function disable_tinymce_cleanup( $options ) {
 add_filter( 'tiny_mce_before_init', 'disable_tinymce_cleanup' );
 
 
-add_action(
-	'wpcf7_init',
-	function () {
-		wpcf7_add_form_tag(
-			array( 'honeypot', 'honeypot*' ),
-			'lc_cf7_honeypot_form_tag_handler',
-			array(
-				'name-attr'    => true,
-				'do-not-store' => true,
-			)
-		);
-	}
-);
-
 /**
- * Handles the honeypot form tag in Contact Form 7.
+ * Automatically add honeypot to all Contact Form 7 forms.
  *
- * Creates a hidden honeypot field that should remain empty. This helps prevent spam
- * by catching automated form submissions.
- *
- * @param WPCF7_FormTag $tag The form tag object.
- * @return string HTML for the honeypot field.
+ * @param string $form The form HTML.
+ * @return string Modified form HTML with honeypot field.
  */
-function lc_cf7_honeypot_form_tag_handler( $tag ) {
-	if ( empty( $tag->name ) ) {
-		return '';
-	}
+function lc_cf7_add_automatic_honeypot( $form ) {
+	// Generate a random honeypot field name to make it harder for bots to detect.
+	$honeypot_name = 'website_url_' . wp_generate_password( 8, false );
 
-	$validation_error = wpcf7_get_validation_error( $tag->name );
-	$class            = wpcf7_form_controls_class( $tag->type );
-
-	if ( $validation_error ) {
-		$class .= ' wpcf7-not-valid';
-	}
-
-	$atts                 = array();
-	$atts['class']        = $tag->get_class_option( $class );
-	$atts['id']           = $tag->get_id_option();
-	$atts['message']      = $tag->get_option( 'message', '', true );
-	$atts['name']         = $tag->name;
-	$atts['type']         = 'text';
-	$atts['autocomplete'] = 'off';
-
-	$atts = wpcf7_format_atts( $atts );
-
-	$html = sprintf(
-		'<span class="contact-field" style="position: fixed; top: 0; left: 0; margin: -1px; padding: 0; height: 1px; width: 1px; clip: rect(0 0 0 0); clip-path: inset(50%%); overflow: hidden; white-space: nowrap; border: 0;">
+	// Create the honeypot field HTML.
+	$honeypot_field = sprintf(
+		'<span class="wpcf7-honeypot-field" style="position: absolute !important; top: -9999px !important; left: -9999px !important; visibility: hidden !important; opacity: 0 !important; height: 0 !important; width: 0 !important; overflow: hidden !important;">
 			<label>
-				<span>%1$s</span>
-				<input %2$s value="" tabindex="-1">
+				<span>%s</span>
+				<input type="text" name="%s" value="" autocomplete="off" tabindex="-1">
 			</label>
-			%3$s
 		</span>',
-		esc_html( ! empty( $atts['message'] ) ? $atts['message'] : __( 'If you are human, leave this field blank.', 'lc-silverline2025' ) ),
-		$atts,
-		$validation_error
+		esc_html__( 'If you are human, leave this field blank.', 'lc-fas2025' ),
+		esc_attr( $honeypot_name )
 	);
 
-	return $html;
-}
+	// Try multiple patterns to find the submit button.
+	$patterns = array(
+		'<input type="submit"',
+		'<input class="',
+		'</form>',
+		'</div>',
+	);
 
-add_filter( 'wpcf7_validate_honeypot', 'lc_cf7_honeypot_validation_filter', 10, 2 );
-add_filter( 'wpcf7_validate_honeypot*', 'lc_cf7_honeypot_validation_filter', 10, 2 );
+	$replaced = false;
+	foreach ( $patterns as $pattern ) {
+		if ( strpos( $form, $pattern ) !== false ) {
+			$form     = str_replace( $pattern, $honeypot_field . $pattern, $form );
+			$replaced = true;
+			break;
+		}
+	}
+
+	// If no pattern matched, just add to the end.
+	if ( ! $replaced ) {
+		$form .= $honeypot_field;
+	}
+
+	return $form;
+}
+add_filter( 'wpcf7_form_elements', 'lc_cf7_add_automatic_honeypot' );
 
 /**
- * Validates the honeypot field in Contact Form 7.
+ * Validate automatic honeypot fields on form submission.
  *
- * Checks if the honeypot field has been filled out. If it has, the submission
- * is marked as spam.
- *
- * @param WPCF7_Validation $result The validation result object.
- * @param WPCF7_FormTag    $tag    The form tag object.
+ * @param WPCF7_Validation $result The validation result.
  * @return WPCF7_Validation The modified validation result.
  */
-function lc_cf7_honeypot_validation_filter( $result, $tag ) {
-	$name = $tag->name;
-
+function lc_cf7_validate_automatic_honeypot( $result ) {
+	// Check all POST data for honeypot fields (they start with 'website_url_').
 	// We don't need nonce verification here as this is handled by CF7.
 	// phpcs:ignore WordPress.Security.NonceVerification.Missing
-	$value = isset( $_POST[ $name ] ) ? sanitize_text_field( wp_unslash( $_POST[ $name ] ) ) : '';
-
-	if ( ! empty( $value ) ) {
-		$result->invalidate( $tag, __( 'Spam detected.', 'lc-silverline2025' ) );
+	foreach ( $_POST as $key => $value ) {
+		if ( strpos( $key, 'website_url_' ) === 0 && ! empty( $value ) ) {
+			// Honeypot field was filled - mark as spam.
+			$result->invalidate( null, __( 'Spam submission detected.', 'lc-fas2025' ) );
+			break;
+		}
 	}
 
 	return $result;
 }
+add_filter( 'wpcf7_validate', 'lc_cf7_validate_automatic_honeypot', 10, 1 );

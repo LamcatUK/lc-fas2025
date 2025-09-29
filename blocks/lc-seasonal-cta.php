@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$season = get_field( 'season' ) ? get_field( 'season' ) : '';
+$season = get_field( 'active_season', 'option' ) ? get_field( 'active_season', 'option' ) : '';
 
 if ( ! $season ) {
 	return;
