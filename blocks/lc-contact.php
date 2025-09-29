@@ -31,8 +31,15 @@ defined( 'ABSPATH' ) || exit;
 				?>
 			</div>
 			<div class="col-md-6" data-aos="fade" data-aos-delay="200">
+				<?php
+				$form_id = get_field( 'form_id' );
+				if ( $form_id ) {
+					?>
 				<h3 class="h3 mb-3">Send a Message</h3>
-				<?= do_shortcode( '[contact-form-7 id="38ce6d9" title="Contact form"]' ); ?>
+				<?= do_shortcode( '[contact-form-7 id="' . esc_attr( $form_id ) . '" title="Contact form"]' ); ?>
+					<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>
