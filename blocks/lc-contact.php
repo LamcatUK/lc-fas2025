@@ -36,8 +36,8 @@ defined( 'ABSPATH' ) || exit;
 				if ( $form_id ) {
 					?>
 				<h3 class="h3 mb-3">Send a Message</h3>
-				<?= do_shortcode( '[contact-form-7 id="' . esc_attr( $form_id ) . '" title="Contact form"]' ); ?>
 					<?php
+					echo do_shortcode( '[contact-form-7 id="' . esc_attr( $form_id ) . '" title="Contact form"]' );
 				}
 				?>
 			</div>
