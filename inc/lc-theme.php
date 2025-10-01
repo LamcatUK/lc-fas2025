@@ -35,6 +35,15 @@ add_action(
 );
 
 /**
+ * Force enable alignment options for blocks
+ */
+function force_enable_block_alignments() {
+    add_theme_support( 'align-wide' );
+    add_theme_support( 'align-full' );
+}
+add_action( 'after_setup_theme', 'force_enable_block_alignments', 1 );
+
+/**
  * Neutralise legacy palette/font-size support (if parent/Understrap adds them).
  * theme.json is authoritative, but some themes still register supports in PHP.
  * Remove them AFTER the parent has added them (high priority).
@@ -118,7 +127,7 @@ function widgets_init() {
     unregister_sidebar( 'footerfull' );
     unregister_nav_menu( 'primary' );
 
-    add_theme_support( 'disable-custom-colors' );
+    // add_theme_support( 'disable-custom-colors' );
 }
 add_action( 'widgets_init', 'widgets_init', 11 );
 

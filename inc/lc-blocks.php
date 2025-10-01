@@ -284,3 +284,17 @@ function modify_core_add_container( $attributes, $content ) {
 	$content = ob_get_clean();
     return $content;
 }
+
+/**
+ * Ensure Group blocks support alignment options
+ */
+function enable_group_block_alignment() {
+    if ( function_exists( 'register_block_type' ) ) {
+        // Get the existing Group block and ensure it supports alignment
+        $group_block = WP_Block_Type_Registry::get_instance()->get_registered( 'core/group' );
+        if ( $group_block ) {
+            $group_block->supports['align'] = array( 'wide', 'full' );
+        }
+    }
+}
+add_action( 'init', 'enable_group_block_alignment', 20 );
