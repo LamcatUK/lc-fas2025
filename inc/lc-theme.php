@@ -21,6 +21,23 @@ require_once LC_THEME_DIR . '/inc/lc-blocks.php';
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 
+// Remove WordPress layout styles that interfere with alignment.
+add_filter( 'wp_theme_json_get_style_nodes', function( $nodes ) {
+    // Remove layout styles from theme.json output
+    foreach ( $nodes as $key => $node ) {
+        if ( isset( $node['selector'] ) && strpos( $node['selector'], '.is-layout-constrained' ) !== false ) {
+            unset( $nodes[ $key ] );
+        }
+    }
+    return $nodes;
+} );
+
+// Also try removing the layout stylesheet entirely
+add_action( 'wp_enqueue_scripts', function() {
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'global-styles' );
+}, 100 );
+
 /**
  * Editor styles: opt-in so WP loads editor.css in the block editor.
  * With theme.json present, this just adds your custom CSS on top (variables, helpers).

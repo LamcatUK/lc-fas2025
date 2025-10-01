@@ -8,6 +8,19 @@
   background: var(--col-secondary-100);
 }
 
+/* Editor-only layout constraints to center content */
+.editor-styles-wrapper .wp-block {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Editor container for overall layout */
+.editor-styles-wrapper {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 /* Map heading appearance in editor */
 .editor-styles-wrapper h1 {
   font-family: var(--ff-heading);
@@ -108,31 +121,8 @@
   letter-spacing: 0.02em !important;
 }
 
-/* Override WordPress layout constraints for group blocks with backgrounds */
-.wp-block-group.has-background.is-layout-constrained {
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  @extend .py-5;
-}
-
-/* Ensure proper spacing is maintained */
-.wp-block-group.has-background .container {
-  width: 100%;
-  max-width: var(--wp--style--global--content-size, 1200px);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--wp--style--global--wide-size, 1rem);
-  padding-right: var(--wp--style--global--wide-size, 1rem);
-}
-
-/* Handle flow layout groups with backgrounds too */
-.wp-block-group.has-background.is-layout-flow {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+/* Let your existing _child_theme.scss handle group containers */
+/* Just add support for backgrounds with padding */
+.wp-block-group.has-background {
   @extend .py-5;
 }

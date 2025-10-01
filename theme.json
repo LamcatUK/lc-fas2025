@@ -2,10 +2,6 @@
   "version": 2,
   "settings": {
     "appearanceTools": true,
-    "layout": {
-      "contentSize": "1200px",
-      "wideSize": "1400px"
-    },
     "color": {
       "palette": [
         { "slug": "white", "name": "White", "color": "hsl(0 0% 100%)" },

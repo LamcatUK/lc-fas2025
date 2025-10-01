@@ -286,6 +286,48 @@ function modify_core_add_container( $attributes, $content ) {
 }
 
 /**
+ * Handle Group blocks differently - only add container for non-aligned groups without backgrounds.
+ *
+ * @param array  $attributes The block attributes.
+ * @param string $content    The block content.
+ * @return string The modified block content.
+ */
+function modify_group_block( $attributes, $content ) {
+    if ( is_footer_rendering() ) {
+        return $content;
+    }
+
+    // Check if group has alignment or background.
+    $has_alignment  = ! empty( $attributes['align'] ) && in_array( $attributes['align'], array( 'wide', 'full' ), true );
+    $has_background = ! empty( $attributes['backgroundColor'] ) || 
+                      ! empty( $attributes['style']['color']['background'] ) ||
+                      ! empty( $attributes['gradient'] );
+
+    // Only add container for groups without alignment and without background.
+    if ( ! $has_alignment && ! $has_background ) {
+        ob_start();
+        ?>
+        <div class="container">
+            <?= wp_kses_post( $content ); ?>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
+
+    // For groups with backgrounds, add py-5 class.
+    if ( $has_background ) {
+        // Add py-5 to the group wrapper.
+        $content = preg_replace( 
+            '/<div class="([^"]*wp-block-group[^"]*)"/', 
+            '<div class="$1 py-5"', 
+            $content 
+        );
+    }
+
+    return $content;
+}
+
+/**
  * Ensure Group blocks support alignment options
  */
 function enable_group_block_alignment() {

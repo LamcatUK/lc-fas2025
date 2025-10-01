@@ -46,18 +46,6 @@ body {
   }
 }
 
-.wp-block-group {
-  &:not(.alignfull) {
-    @extend .container;
-    & .container {
-      padding-inline: 0;
-    }
-  }
-}
-.container .container {
-  padding-inline: 0;
-}
-
 .post_meta {
   padding-inline: 1rem;
   padding-block-end: 0.5rem;

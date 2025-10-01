@@ -696,7 +696,7 @@ progress {
   color: #6c757d;
 }
 
-.container, .wp-block-group:not(.alignfull),
+.container,
 .container-fluid,
 .container-xxl,
 .container-xl,
@@ -713,27 +713,27 @@ progress {
 }
 
 @media (min-width: 576px) {
-  .container-sm, .container, .wp-block-group:not(.alignfull) {
+  .container-sm, .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container, .wp-block-group:not(.alignfull) {
+  .container-md, .container-sm, .container {
     max-width: 750px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container, .wp-block-group:not(.alignfull) {
+  .container-lg, .container-md, .container-sm, .container {
     max-width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container, .wp-block-group:not(.alignfull) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1170px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container, .wp-block-group:not(.alignfull) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1360px;
   }
 }
@@ -3822,7 +3822,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
-.navbar > .container, .navbar > .wp-block-group:not(.alignfull),
+.navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
 .navbar > .container-md,
@@ -7799,7 +7799,7 @@ textarea.form-control-lg {
   padding-bottom: 1.5rem !important;
 }
 
-.py-5, .wp-block-group.has-background.is-layout-flow, .wp-block-group.has-background.is-layout-constrained {
+.py-5, .wp-block-group.has-background {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
@@ -21987,7 +21987,7 @@ header#wrapper-navbar {
 header#wrapper-navbar.hide {
   transform: translateY(-100%);
 }
-header .container, header .wp-block-group:not(.alignfull) {
+header .container {
   border-bottom: 1px solid var(--col-secondary-400);
 }
 header a,
@@ -22142,6 +22142,19 @@ header .dropdown.current-menu-item > .nav-link {
   background: var(--col-secondary-100);
 }
 
+/* Editor-only layout constraints to center content */
+.editor-styles-wrapper .wp-block {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Editor container for overall layout */
+.editor-styles-wrapper {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 /* Map heading appearance in editor */
 .editor-styles-wrapper h1, .editor-styles-wrapper .h1 {
   font-family: var(--ff-heading);
@@ -22262,33 +22275,8 @@ header .dropdown.current-menu-item > .nav-link {
   letter-spacing: 0.02em !important;
 }
 
-/* Override WordPress layout constraints for group blocks with backgrounds */
-.wp-block-group.has-background.is-layout-constrained {
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Ensure proper spacing is maintained */
-.wp-block-group.has-background .container, .wp-block-group.has-background .wp-block-group:not(.alignfull) {
-  width: 100%;
-  max-width: var(--wp--style--global--content-size, 1200px);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--wp--style--global--wide-size, 1rem);
-  padding-right: var(--wp--style--global--wide-size, 1rem);
-}
-
-/* Handle flow layout groups with backgrounds too */
-.wp-block-group.has-background.is-layout-flow {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
+/* Let your existing _child_theme.scss handle group containers */
+/* Just add support for backgrounds with padding */
 .seasonal-cta {
   position: relative;
   isolation: isolate;
@@ -22442,14 +22430,6 @@ body {
   text-decoration: none;
   font-weight: var(--fw-600);
   color: var(--col-neutral-900);
-}
-
-.wp-block-group:not(.alignfull) .container, .wp-block-group:not(.alignfull) .wp-block-group:not(.alignfull) {
-  padding-inline: 0;
-}
-
-.container .container, .wp-block-group:not(.alignfull) .container, .container .wp-block-group:not(.alignfull), .wp-block-group:not(.alignfull) .wp-block-group:not(.alignfull) {
-  padding-inline: 0;
 }
 
 .post_meta {
