@@ -23,19 +23,24 @@ defined( 'ABSPATH' ) || exit;
 				<?php
 				foreach ( $studio_images as $image ) {
 					?>
-					<div class="swiper-slide text-center">
-						<?= wp_get_attachment_image( $image, 'large', false, array( 'class' => 'img-fluid img-radius' ) ); ?>
-					</div>
+					<a href="<?= esc_url( wp_get_attachment_image_url( $image, 'full' ) ); ?>" class="swiper-slide image-4x3 glightbox img-radius" data-gallery="gallery-all" data-type="image">
+						<?= wp_get_attachment_image( $image, 'large', false, array( 'class' => '' ) ); ?>
+					</a>
 					<?php
 				}
 				?>
 			</div>
 		</div>
 			<?php
-			add_action(
-				'wp_footer',
-				function () {
-					?>
+		}
+		?>
+	</div>
+</section>
+<?php
+add_action(
+	'wp_footer',
+	function () {
+		?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	if (window.Swiper) {
@@ -58,13 +63,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}
+
+	var lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true
+    });
 });
 </script>
-					<?php
-				},
-				9999
-			);
-		}
-		?>
-	</div>
-</section>
+		<?php
+	},
+	9999
+);
