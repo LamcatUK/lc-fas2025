@@ -22277,6 +22277,84 @@ header .dropdown.current-menu-item > .nav-link {
 
 /* Let your existing _child_theme.scss handle group containers */
 /* Just add support for backgrounds with padding */
+.image-16x9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  box-shadow: var(--shadow-noninteractive);
+}
+.image-16x9 img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+a.image-16x9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  box-shadow: var(--shadow-interactive);
+  transition: box-shadow var(--transition);
+  display: block;
+}
+a.image-16x9 img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition);
+}
+a.image-16x9:hover {
+  box-shadow: var(--shadow-active);
+}
+a.image-16x9:hover img {
+  transform: scale(1.025);
+}
+
+.image-4x3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  box-shadow: var(--shadow-noninteractive);
+}
+.image-4x3 img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+a.image-4x3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  box-shadow: var(--shadow-interactive);
+  transition: box-shadow var(--transition);
+  display: block;
+}
+a.image-4x3 img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition);
+}
+a.image-4x3:hover {
+  box-shadow: var(--shadow-active);
+}
+a.image-4x3:hover img {
+  transform: scale(1.025);
+}
+
 .seasonal-cta {
   position: relative;
   isolation: isolate;

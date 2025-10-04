@@ -39,7 +39,7 @@ $session_type = get_field( 'session_type', get_the_ID() );
 				$query->the_post();
 				?>
 				<div class="col-sm-6 col-md-4 col-lg-3 gallery-item-wrapper">
-					<a href="<?= esc_url( wp_get_attachment_image_url( get_the_ID(), 'full' ) ); ?>" class="gallery__link image-16x9 glightbox" data-gallery="gallery-all" data-type="image">
+					<a href="<?= esc_url( wp_get_attachment_image_url( get_the_ID(), 'full' ) ); ?>" class="gallery__link image-4x3 glightbox" data-gallery="gallery-all" data-type="image">
 						<?= wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'gallery__image' ) ); ?>
 					</a>
 				</div>
