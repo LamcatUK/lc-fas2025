@@ -33,12 +33,12 @@ $session_type = get_field( 'session_type', get_the_ID() );
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) {
 			?>
-		<div class="row" id="gallery_items">
+		<div class="row g-1" id="gallery_items">
 			<?php
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				?>
-				<div class="col-md-4 mb-4 gallery-item-wrapper">
+				<div class="col-sm-6 col-md-4 col-lg-3 gallery-item-wrapper">
 					<a href="<?= esc_url( wp_get_attachment_image_url( get_the_ID(), 'full' ) ); ?>" class="gallery__link image-16x9 glightbox" data-gallery="gallery-all" data-type="image">
 						<?= wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'gallery__image' ) ); ?>
 					</a>
