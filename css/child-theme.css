@@ -22388,6 +22388,71 @@ header .dropdown.current-menu-item > .nav-link {
   transition: none;
 }
 
+.award-grid {
+  position: relative;
+  -moz-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 0.25rem;
+  column-gap: 0.25rem;
+  font-size: 0;
+  line-height: 0;
+}
+@media (min-width: 768px) {
+  .award-grid {
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (min-width: 992px) {
+  .award-grid {
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+@media (min-width: 1200px) {
+  .award-grid {
+    -moz-column-count: 5;
+    column-count: 5;
+  }
+}
+.award-grid .award {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0.25rem;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+  -moz-column-break-inside: avoid;
+  break-inside: avoid;
+}
+.award-grid .award img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.award-grid .award .award-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 1rem;
+  line-height: normal;
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .award-grid .award:hover .award-caption {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: var(--col-white);
 }

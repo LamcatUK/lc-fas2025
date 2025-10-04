@@ -1,0 +1,56 @@
+.award-grid {
+  position: relative;
+  column-count: 2;
+  @media (min-width: 768px) {
+    column-count: 3;
+  }
+  @media (min-width: 992px) {
+    column-count: 4;
+  }
+  @media (min-width: 1200px) {
+    column-count: 5;
+  }
+  column-gap: 0.25rem;
+  font-size: 0; // Remove text spacing between inline-block elements
+  line-height: 0; // Remove line height spacing
+
+  .award {
+    display: inline-block;
+    width: 100%;
+    margin: 0; // Remove all margins
+    margin-bottom: 0.25rem; // Space between rows
+    padding: 0; // Remove all padding
+    vertical-align: top; // Align to top to prevent baseline spacing
+    position: relative;
+    cursor: pointer;
+    break-inside: avoid; // Prevent breaking across columns
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0; // Ensure no margins on images
+      padding: 0; // Ensure no padding on images
+    }
+
+    .award-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 1rem; // Reset font size for caption text
+      line-height: normal; // Reset line height for caption text
+    }
+
+    @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+      &:hover .award-caption {
+        opacity: 1;
+      }
+    }
+  }
+}
