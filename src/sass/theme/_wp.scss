@@ -133,7 +133,7 @@
   height: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  box-shadow: var(--shadow-noninteractive);
+  // box-shadow: var(--shadow-noninteractive);
   img {
     object-fit: cover;
     width: 100%;
@@ -147,8 +147,8 @@ a.image-16x9 {
   height: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  box-shadow: var(--shadow-interactive);
-  transition: box-shadow var(--transition);
+  // box-shadow: var(--shadow-interactive);
+  // transition: box-shadow var(--transition);
   display: block;
   img {
     object-fit: cover;
@@ -157,7 +157,7 @@ a.image-16x9 {
     transition: transform var(--transition);
   }
   &:hover {
-    box-shadow: var(--shadow-active);
+    // box-shadow: var(--shadow-active);
     img {
       transform: scale(1.025);
     }
@@ -170,7 +170,7 @@ a.image-16x9 {
   height: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  box-shadow: var(--shadow-noninteractive);
+  // box-shadow: var(--shadow-noninteractive);
   img {
     object-fit: cover;
     width: 100%;
@@ -184,8 +184,8 @@ a.image-4x3 {
   height: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  box-shadow: var(--shadow-interactive);
-  transition: box-shadow var(--transition);
+  // box-shadow: var(--shadow-interactive);
+  // transition: box-shadow var(--transition);
   display: block;
   img {
     object-fit: cover;
@@ -194,7 +194,7 @@ a.image-4x3 {
     transition: transform var(--transition);
   }
   &:hover {
-    box-shadow: var(--shadow-active);
+    // box-shadow: var(--shadow-active);
     img {
       transform: scale(1.025);
     }

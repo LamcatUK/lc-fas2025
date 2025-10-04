@@ -80,8 +80,8 @@ $block_uid = 'text-image-' . uniqid();
 				?>
 			</div>
 			<div class="<?= esc_attr( $image_col_width . ' ' . $image_order_class ); ?>" data-aos="fade">
-				<div class="image-16x9 img-radius text-center">
-					<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => '' ) ); ?>
+				<div class="text-center">
+					<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => 'img-radius' ) ); ?>
 				</div>
 			</div>
 		</div>
