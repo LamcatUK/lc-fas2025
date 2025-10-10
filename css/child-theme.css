@@ -22519,6 +22519,18 @@ a.image-4x3:hover img {
   }
 }
 
+.session-pricing__content {
+  margin-bottom: 1rem;
+}
+.session-pricing__plan .card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.session-pricing__plan-feature {
+  grid-column: span 2;
+}
+
 body {
   background-color: var(--col-white);
 }

@@ -19,6 +19,23 @@ function acf_blocks() {
 
         acf_register_block_type(
             array(
+                'name'            => 'lc_session_pricing',
+                'title'           => __( 'LC Session Pricing' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/lc-session-pricing.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'            => 'lc_full_width_text',
                 'title'           => __( 'LC Full Width Text' ),
                 'category'        => 'layout',
@@ -308,7 +325,6 @@ function modify_core_add_container( $attributes, $content ) {
     if ( is_footer_rendering() ) {
         return $content;
     }
-
     ob_start();
     ?>
     <div class="container">
@@ -333,9 +349,9 @@ function modify_group_block( $attributes, $content ) {
 
     // Check if group has alignment or background.
     $has_alignment  = ! empty( $attributes['align'] ) && in_array( $attributes['align'], array( 'wide', 'full' ), true );
-    $has_background = ! empty( $attributes['backgroundColor'] ) || 
-                      ! empty( $attributes['style']['color']['background'] ) ||
-                      ! empty( $attributes['gradient'] );
+    $has_background = ! empty( $attributes['backgroundColor'] ) ||
+                    ! empty( $attributes['style']['color']['background'] ) ||
+                    ! empty( $attributes['gradient'] );
 
     // Only add container for groups without alignment and without background.
     if ( ! $has_alignment && ! $has_background ) {
@@ -351,10 +367,10 @@ function modify_group_block( $attributes, $content ) {
     // For groups with backgrounds, add py-5 class.
     if ( $has_background ) {
         // Add py-5 to the group wrapper.
-        $content = preg_replace( 
-            '/<div class="([^"]*wp-block-group[^"]*)"/', 
-            '<div class="$1 py-5"', 
-            $content 
+        $content = preg_replace(
+            '/<div class="([^"]*wp-block-group[^"]*)"/',
+            '<div class="$1 py-5"',
+            $content
         );
     }
 
@@ -366,7 +382,7 @@ function modify_group_block( $attributes, $content ) {
  */
 function enable_group_block_alignment() {
     if ( function_exists( 'register_block_type' ) ) {
-        // Get the existing Group block and ensure it supports alignment
+        // Get the existing Group block and ensure it supports alignment.
         $group_block = WP_Block_Type_Registry::get_instance()->get_registered( 'core/group' );
         if ( $group_block ) {
             $group_block->supports['align'] = array( 'wide', 'full' );

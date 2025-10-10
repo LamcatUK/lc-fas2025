@@ -1,0 +1,13 @@
+.session-pricing {
+  &__content {
+    margin-bottom: 1rem;
+  }
+  &__plan .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  &__plan-feature {
+    grid-column: span 2;
+  }
+}
