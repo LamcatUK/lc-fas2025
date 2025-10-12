@@ -50,8 +50,12 @@ add_action(
 	document.addEventListener('DOMContentLoaded', function () {
 		const homeHeroSwiper = new Swiper('.home-hero-swiper', {
 			loop: true,
+			effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
 			autoplay: {
-				delay: 5000,
+				delay: 4000,
 				disableOnInteraction: false,
 			},
 			pagination: {
