@@ -10,4 +10,9 @@
   &__plan-feature {
     grid-column: span 2;
   }
+  &__plan--featured {
+    border: 2px solid var(--col-secondary-400);
+    box-shadow: 0 0 10px rgba(112, 79, 87, 0.5);
+    background-color: var(--col-neutral-50);
+  }
 }

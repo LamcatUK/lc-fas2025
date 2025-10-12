@@ -22530,6 +22530,11 @@ a.image-4x3:hover img {
 .session-pricing__plan-feature {
   grid-column: span 2;
 }
+.session-pricing__plan--featured {
+  border: 2px solid var(--col-secondary-400);
+  box-shadow: 0 0 10px rgba(112, 79, 87, 0.5);
+  background-color: var(--col-neutral-50);
+}
 
 body {
   background-color: var(--col-white);

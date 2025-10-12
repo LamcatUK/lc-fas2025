@@ -42,13 +42,26 @@ defined( 'ABSPATH' ) || exit;
 						$plan_name     = get_sub_field( 'plan_name' );
 						$plan_price    = get_sub_field( 'plan_price' );
 						$plan_features = get_sub_field( 'plan_features' );
+						$featured      = get_sub_field( 'featured' ) ? ' session-pricing__plan--featured' : '';
+						$text          = get_sub_field( 'featured' ) ? '' : 'text-muted';
 						?>
 						<div class="<?= esc_attr( $col_class ); ?>">
-							<div class="session-pricing__plan card shadow-sm h-100">
+							<div class="session-pricing__plan card shadow-sm h-100<?= esc_attr( $featured ); ?>">
 								<div class="card-body">
 									<div class="h3 card-title align-content-center"><?= esc_html( $plan_name ); ?></div>
 									<div class="align-content-center text-center"><strong><?= esc_html( $plan_price ); ?></strong></div>
-									<div class="session-pricing__plan-feature text-muted"><?= esc_html( $plan_features ); ?></div>
+									<div class="session-pricing__plan-feature <?= esc_attr( $text ); ?>">
+										<?php
+										if ( $plan_features ) {
+											$features = explode( "<br />", $plan_features );
+											echo '<ul class="mb-0">';
+											foreach ( $features as $feature ) {
+												echo '<li class="mb-1">' . esc_html( trim( $feature ) ) . '</li>';
+											}
+											echo '</ul>';
+										}
+										?>
+									</div>
 								</div>
 							</div>
 						</div>
