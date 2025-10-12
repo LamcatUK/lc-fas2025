@@ -22383,12 +22383,14 @@ a.image-4x3:hover img {
   display: grid;
   grid-template-areas: "stack";
   place-content: center;
-  aspect-ratio: 4/3;
 }
 .service-item__image img {
   width: 100%;
   transition: 0.5s;
   grid-area: stack;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .service-item__image--title {
   grid-area: stack;
