@@ -18,7 +18,7 @@ $session_type = get_field( 'session_type', get_the_ID() );
 			'post_type'      => 'attachment',
 			'post_status'    => 'inherit',
 			'posts_per_page' => -1,
-			'orderby'        => 'date',
+			'orderby'        => 'rand',
 			'order'          => 'DESC',
 			'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 				array(
