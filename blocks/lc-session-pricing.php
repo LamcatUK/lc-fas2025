@@ -35,13 +35,15 @@ defined( 'ABSPATH' ) || exit;
 			<div class="session-pricing__content">
 				<div class="row g-4">
 					<?php
+					// if divisible by 3, use col-md-4, otherwise col-md-6.
+					$col_class = ( count( get_field( 'session_pricing_plans' ) ) % 3 === 0 ) ? 'col-md-4' : 'col-md-6';
 					while ( have_rows( 'session_pricing_plans' ) ) {
 						the_row();
 						$plan_name     = get_sub_field( 'plan_name' );
 						$plan_price    = get_sub_field( 'plan_price' );
 						$plan_features = get_sub_field( 'plan_features' );
 						?>
-						<div class="col-md-6">
+						<div class="<?= esc_attr( $col_class ); ?>">
 							<div class="session-pricing__plan card shadow-sm h-100">
 								<div class="card-body">
 									<div class="h3 card-title"><?= esc_html( $plan_name ); ?></div>
