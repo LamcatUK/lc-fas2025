@@ -53,7 +53,7 @@ defined( 'ABSPATH' ) || exit;
 									<div class="session-pricing__plan-feature <?= esc_attr( $text ); ?>">
 										<?php
 										if ( $plan_features ) {
-											$features = explode( "<br />", $plan_features );
+											$features = explode( '<br />', $plan_features );
 											echo '<ul class="mb-0">';
 											foreach ( $features as $feature ) {
 												echo '<li class="mb-1">' . esc_html( trim( $feature ) ) . '</li>';

@@ -22375,6 +22375,7 @@ a.image-4x3:hover img {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-base);
+  aspect-ratio: 4/3;
 }
 .service-item__image {
   width: 100%;
