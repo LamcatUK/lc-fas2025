@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) || exit;
 						<div class="<?= esc_attr( $col_class ); ?>">
 							<div class="session-pricing__plan card shadow-sm h-100">
 								<div class="card-body">
-									<div class="h3 card-title"><?= esc_html( $plan_name ); ?></div>
+									<div class="h3 card-title align-content-center"><?= esc_html( $plan_name ); ?></div>
 									<div class="align-content-center text-center"><strong><?= esc_html( $plan_price ); ?></strong></div>
 									<div class="session-pricing__plan-feature text-muted"><?= esc_html( $plan_features ); ?></div>
 								</div>

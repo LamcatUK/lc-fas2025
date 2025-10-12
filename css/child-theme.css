@@ -22524,7 +22524,7 @@ a.image-4x3:hover img {
 }
 .session-pricing__plan .card-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 1rem;
 }
 .session-pricing__plan-feature {
