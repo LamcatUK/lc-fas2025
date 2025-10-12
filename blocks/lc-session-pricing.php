@@ -18,12 +18,12 @@ defined( 'ABSPATH' ) || exit;
 				<?php
 				if ( get_field( 'title' ) ) {
 					?>
-				<h2 class="session-pricing__title"><?php echo esc_html( get_field( 'title' ) ); ?></h2>
+				<h2 class="session-pricing__title"><?= esc_html( get_field( 'title' ) ); ?></h2>
 					<?php
 				}
 				if ( get_field( 'intro' ) ) {
 					?>
-				<p class="session-pricing__intro"><?php echo esc_html( get_field( 'intro' ) ); ?></p>
+				<p class="session-pricing__intro"><?= wp_kses_post( get_field( 'intro' ) ); ?></p>
 					<?php
 				}
 				?>
