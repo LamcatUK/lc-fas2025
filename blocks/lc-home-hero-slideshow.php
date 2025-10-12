@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 <?php
 add_action(
 	'wp_footer',
-	function() {
+	function () {
 		?>
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
