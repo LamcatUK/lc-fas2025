@@ -32,7 +32,6 @@ defined( 'ABSPATH' ) || exit;
 							}
 							?>
 						</div>
-						<div class="swiper-pagination"></div>
 					</div>
 					<?php
 				}
@@ -51,6 +50,7 @@ add_action(
 		const homeHeroSwiper = new Swiper('.home-hero-swiper', {
 			loop: true,
 			effect: 'fade',
+			speed: 1000,
             fadeEffect: {
                 crossFade: true
             },
@@ -58,10 +58,7 @@ add_action(
 				delay: 4000,
 				disableOnInteraction: false,
 			},
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
+			pagination: false
 		});
 	});
 </script>
