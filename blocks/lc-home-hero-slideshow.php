@@ -41,3 +41,26 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </section>
+<?php
+add_action(
+	'wp_footer',
+	function() {
+		?>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const homeHeroSwiper = new Swiper('.home-hero-swiper', {
+			loop: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+		});
+	});
+</script>
+		<?php
+	}
+);
