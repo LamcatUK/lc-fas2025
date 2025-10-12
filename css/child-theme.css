@@ -22383,6 +22383,7 @@ a.image-4x3:hover img {
   display: grid;
   grid-template-areas: "stack";
   place-content: center;
+  aspect-ratio: 4/3;
 }
 .service-item__image img {
   width: 100%;
@@ -22419,9 +22420,6 @@ a.image-4x3:hover img {
   justify-content: flex-end;
 }
 @media (min-width: 768px) {
-  .session-grid:not(.touch) .service-item {
-    aspect-ratio: 4/3;
-  }
   .session-grid:not(.touch) .service-item__details {
     position: absolute;
     top: 0;
