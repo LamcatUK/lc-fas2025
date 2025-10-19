@@ -22539,6 +22539,46 @@ a.image-4x3:hover img {
   background-color: var(--col-neutral-50);
 }
 
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.price-list ul {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: var(--radius-base);
+}
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25em 0;
+  position: relative;
+}
+.price-list li::before {
+  content: "";
+  flex-grow: 1;
+  border-bottom: 1px dotted hsl(var(--col-accent-400-hsl)/0.3);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.75em;
+  z-index: 0;
+}
+.price-list .price-title,
+.price-list .price-amount {
+  background-color: #fff; /* match page background */
+  z-index: 1;
+}
+.price-list .price-title {
+  padding-right: 0.5em;
+}
+.price-list .price-amount {
+  padding-left: 0.5em;
+}
+
 body {
   background-color: var(--col-white);
 }

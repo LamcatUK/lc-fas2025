@@ -1,0 +1,41 @@
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  ul {
+    padding: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.175);
+    border-radius: var(--radius-base);
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.25em 0;
+    position: relative;
+    &::before {
+      content: "";
+      flex-grow: 1;
+      border-bottom: 1px dotted hsl(var(--col-accent-400-hsl) / 0.3);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.75em;
+      z-index: 0;
+    }
+  }
+
+  .price-title,
+  .price-amount {
+    background-color: #fff; /* match page background */
+    z-index: 1;
+  }
+  .price-title {
+    padding-right: 0.5em;
+  }
+  .price-amount {
+    padding-left: 0.5em;
+  }
+}
