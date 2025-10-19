@@ -32,7 +32,7 @@ if ( $seasons ) {
 		<h2 class="fw-heading" data-aos="fade"><?= esc_html( $season_details['title'] ); ?></h2>
 		<p class="mb-5 h2 fw-regular" data-aos="fade" data-aos-delay="100"><?= esc_html( $season_details['subtitle'] ); ?></p>
 		<p data-aos="fade" data-aos-delay="200">
-			<a href="<?= esc_url( $season_details['page']['url'] ); ?>" class="btn btn--primary"><?= esc_html( $season_details['page']['title'] ); ?></a>
+			<a href="/packages/" class="btn btn--primary"><?= esc_html( $season_details['page']['title'] ); ?></a>
 		</p>
 	</div>
 </section>

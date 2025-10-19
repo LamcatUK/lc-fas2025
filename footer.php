@@ -39,10 +39,10 @@ defined( 'ABSPATH' ) || exit;
 				?>
             </div>
             <div class="col-md-3 footer__contact">
-				<ul class="fa-ul">
-					<li><span class="fa-li"><i class="far fa-envelope"></i></span> <?= do_shortcode( '[contact_email]' ); ?></li>
-					<li><span class="fa-li"><i class="fas fa-phone"></i></span> <?= do_shortcode( '[contact_phone]' ); ?></li>
-					<li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span> <?= do_shortcode( '[contact_address]' ); ?></li>
+				<ul class="fa-ul mb-4">
+					<li class="mb-1"><span class="fa-li"><i class="far fa-envelope"></i></span> <?= do_shortcode( '[contact_email]' ); ?></li>
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-phone"></i></span> <?= do_shortcode( '[contact_phone]' ); ?></li>
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span> <?= do_shortcode( '[contact_address]' ); ?></li>
 				</ul>
 				<?php
 				$social_media_group = get_field( 'social', 'option' );
