@@ -79,6 +79,14 @@ defined( 'ABSPATH' ) || exit;
 			<div class="session-pricing__after-content text-center fs-ui"><?= esc_html( get_field( 'after_content' ) ); ?></div>
 				<?php
 			}
+			if ( get_field( 'cta' ) ) {
+				$cta = get_field( 'cta' );
+				?>
+			<div class="text-center mt-4">
+				<a href="<?= esc_url( $cta['url'] ); ?>" class="btn btn--primary" target="<?= esc_attr( $cta['target'] ); ?>"><?= esc_html( $cta['title'] ); ?></a>
+			</div>
+				<?php
+			}
 			?>
 		</div>
 	</div>
