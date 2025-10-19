@@ -307,3 +307,24 @@ add_filter(
         return $field;
     }
 );
+
+/**
+ * Remove the /packages/ menu item if no active season is set.
+ */
+add_filter( 'wp_nav_menu_objects', function( $items, $args ) {
+
+    // Get the active season from ACF options
+    $active_season = get_field( 'active_season', 'option' );
+
+    // If no active season, filter out the /packages/ menu item
+    if ( empty( $active_season ) ) {
+        $items = array_filter( $items, function( $item ) {
+            // Match either absolute URL or relative path
+            $url = rtrim( $item->url, '/' );
+            return ! str_ends_with( $url, '/packages' );
+        });
+    }
+
+    return $items;
+
+}, 10, 2 );
