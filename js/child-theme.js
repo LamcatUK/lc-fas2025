@@ -6876,6 +6876,7 @@
 	  duration: 600
 	});
 
+	/*
 	// Header hide on scroll
 	(function () {
 	  var doc = document.documentElement;
@@ -6910,6 +6911,7 @@
 	  };
 	  window.addEventListener("scroll", checkScroll);
 	})();
+	*/
 
 	exports.Alert = Alert;
 	exports.Button = button;

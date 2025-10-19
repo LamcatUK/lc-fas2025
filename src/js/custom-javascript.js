@@ -7,6 +7,7 @@ AOS.init({
   duration: 600,
 });
 
+/*
 // Header hide on scroll
 (function () {
   var doc = document.documentElement;
@@ -41,3 +42,4 @@ AOS.init({
   };
   window.addEventListener("scroll", checkScroll);
 })();
+*/
