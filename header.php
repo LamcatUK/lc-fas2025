@@ -102,7 +102,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
 	}
 	?>
 <header id="wrapper-navbar" class="fixed-top p-0">
-	<nav class="navbar navbar-expand-lg">
+	<nav class="navbar navbar-expand-lg pb-0">
 		<div class="container gap-4">
             <div class="d-flex justify-content-between w-100 w-lg-auto align-items-center">
                 <div class="logo-container"><a href="/" class="logo navbar-brand" aria-label="For All Seasons Photography Homepage"></a></div>
