@@ -19,6 +19,23 @@ function acf_blocks() {
 
         acf_register_block_type(
             array(
+                'name'            => 'lc_text_gallery',
+                'title'           => __( 'LC Text Gallery' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/lc-text-gallery.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'            => 'lc_image_cards',
                 'title'           => __( 'LC Image Cards' ),
                 'category'        => 'layout',
