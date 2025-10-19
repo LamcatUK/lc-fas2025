@@ -7,11 +7,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$classes = $block['className'] ?? 'pb-5';
+
 // get session_type.
 $session_type = get_field( 'session_type', get_the_ID() );
 ?>
-<section class="gallery">
-	<div class="container pb-5">
+<section class="gallery <?= esc_attr( $classes ); ?>">
+	<div class="container">
 		<?php
 		// Fetch all attachments.
 		$args = array(
