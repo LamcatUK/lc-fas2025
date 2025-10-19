@@ -1,0 +1,23 @@
+{
+  "key": "group_lc_image_cta",
+  "title": "LC Image CTA",
+  "fields": [
+    {
+      "key": "field_lc_image_cta_title",
+      "label": "LC Image CTA",
+      "name": "title",
+      "type": "message"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/lc-image-cta"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}
