@@ -18,7 +18,7 @@ if ( ! $prices || count( $prices ) < 2 ) {
 // if divisible by 2, use cols-lg-2, else cols-lg-3.
 $cols_class = ( count( $prices ) % 2 === 0 ) ? 'cols-lg-2' : 'cols-lg-3';
 ?>
-<section class="price-list">
+<section class="price-list <?= esc_attr( $block['className'] ); ?>">
 	<div class="container">
 		<ul class="<?= esc_attr( $cols_class ); ?> gap-5 shadow-sm ">
 			<?php
