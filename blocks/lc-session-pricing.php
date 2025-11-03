@@ -76,7 +76,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			if ( get_field( 'after_content' ) ) {
 				?>
-			<div class="session-pricing__after-content text-center fs-ui"><?= esc_html( get_field( 'after_content' ) ); ?></div>
+			<div class="session-pricing__after-content text-center fs-ui"><?= wp_kses_post( get_field( 'after_content' ) ); ?></div>
 				<?php
 			}
 			if ( get_field( 'cta' ) ) {
