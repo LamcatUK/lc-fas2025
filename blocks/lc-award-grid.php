@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 				$title       = get_sub_field( 'title' );
 				$description = get_sub_field( 'description' );
 				$full_image  = wp_get_attachment_image_url( $image, 'full' );
-				$thumb_image = wp_get_attachment_image_url( $image, 'medium' );
+				$thumb_image = wp_get_attachment_image_url( $image, 'large' );
 				?>
 			<a href="<?= esc_url( $full_image ); ?>" class="award glightbox" data-glightbox="title: <?= esc_attr( $title ); ?>; description: <?= esc_attr( $description ); ?>; descPosition: right;">
 				<img src="<?= esc_url( $thumb_image ); ?>" alt="<?= esc_attr( $title ); ?>">
