@@ -106,6 +106,34 @@
             "mime_types": "",
             "insert": "append",
             "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_69090847ed6f7",
+            "label": "Background",
+            "name": "background",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "neutral-50": "Yes"
+            },
+            "default_value": [
+                "neutral-50"
+            ],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -127,5 +155,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1760872828
+    "modified": 1762199651
 }

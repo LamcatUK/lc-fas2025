@@ -12,8 +12,10 @@ if ( ! $images ) {
 	return;
 }
 
+$bg = get_field( 'background' )[0] ? ' has-' . esc_attr( get_field( 'background' )[0] ) . '-background-color' : '';
+
 ?>
-<section class="text-gallery has-neutral-50-background-color py-5">
+<section class="text-gallery<?= esc_attr( $bg ); ?> py-5">
 	<div class="container">
 		<div class="row g-4">
 			<div class="col-md-6">
