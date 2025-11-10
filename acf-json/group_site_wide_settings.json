@@ -324,6 +324,27 @@
             "append": ""
         },
         {
+            "key": "field_6911a94d9ee73",
+            "label": "GA Property",
+            "name": "ga_property",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68a7625413eff",
             "label": "GTM Property",
             "name": "gtm_property",
@@ -376,7 +397,10 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "": "Select active season...",
+                "Autumn": "Autumn"
+            },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
@@ -765,5 +789,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759169172
+    "display_title": "",
+    "modified": 1762765145
 }
