@@ -77,6 +77,9 @@ if ( session_status() === PHP_SESSION_NONE ) {
 	if ( get_field( 'google_site_verification', 'options' ) ) {
 		echo '<meta name="google-site-verification" content="' . esc_attr( get_field( 'google_site_verification', 'options' ) ) . '" />';
 	}
+    ?>
+    <meta name="google-site-verification" content="EvDevvFz4b-fDoTaSV_i9zmyQH7-Nvv5Imkr8Pbnz7M" />
+    <?php
 	if ( get_field( 'bing_site_verification', 'options' ) ) {
 		echo '<meta name="msvalidate.01" content="' . esc_attr( get_field( 'bing_site_verification', 'options' ) ) . '" />';
 	}
