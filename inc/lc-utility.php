@@ -248,6 +248,29 @@ if ( is_admin() ) {
 	 */
 	function cb_disable_editor_fullscreen_by_default() {
 		$script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
+
+		$script .= "\n(function(){ if (!window.wp || !wp.data) { return; } wp.domReady(function(){
+			function isTypingInBlockEditor(){ try { var sel = wp.data.select('core/block-editor'); return !!(sel && (sel.getSelectionStart() || sel.getSelectedBlock())); } catch(e){ return false; } }
+
+			try {
+				if (window.switchEditors && typeof window.switchEditors.go === 'function') {
+					var originalGo = window.switchEditors.go;
+					window.switchEditors.go = function(id, mode){
+						if (isTypingInBlockEditor()) {
+							var alreadyInit = false;
+							if (window.tinymce) {
+								var ed = window.tinymce.get(id);
+								alreadyInit = !!ed;
+							}
+							if (alreadyInit) {
+								return;
+							}
+						}
+						return originalGo.apply(this, arguments);
+					};
+				}
+			} catch(e){}
+		}); });";
 		wp_add_inline_script( 'wp-blocks', $script );
 	}
 	add_action( 'enqueue_block_editor_assets', 'cb_disable_editor_fullscreen_by_default' );
