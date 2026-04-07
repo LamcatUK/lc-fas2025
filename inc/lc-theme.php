@@ -328,3 +328,30 @@ add_filter( 'wp_nav_menu_objects', function( $items, $args ) {
     return $items;
 
 }, 10, 2 );
+
+/**
+ * Restrict Yoast Duplicate Post "New Draft" to /packages/ child pages only.
+ *
+ * @param array   $actions Row actions.
+ * @param WP_Post $post    Current post object.
+ * @return array
+ */
+add_filter(
+	'page_row_actions',
+	function ( $actions, $post ) {
+		if ( ! $post instanceof WP_Post || 'page' !== $post->post_type ) {
+			return $actions;
+		}
+
+		$packages_page = get_page_by_path( 'packages' );
+		$packages_id   = $packages_page ? (int) $packages_page->ID : 0;
+
+		if ( ! $packages_id || (int) $post->post_parent !== $packages_id ) {
+			unset( $actions['edit_as_new_draft'] );
+		}
+
+		return $actions;
+	},
+	20,
+	2
+);
